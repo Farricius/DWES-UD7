@@ -8,7 +8,8 @@ function mostrarCiudades()
     $poblacion = "";
 
     $url = "http://localhost/DWES-UD7/ejercicio4/servidor/index.php?controller=ciudades&action=mostrarCiudadesServidor";
-    $uri = "http://localhost/DWES-UD7/ejercicio4/servidor";
+    $uri = "http://localhost/DWES-UD7/ejercicio4/servidor/";
+    
     $cliente = new SoapClient(null, array('location' => $url, 'uri' => $uri));
 
     // Ejecutamos las siguientes líneas al enviar el formulario

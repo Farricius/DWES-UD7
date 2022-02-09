@@ -14,10 +14,11 @@ function getCiudad($numero)
 
     $db = getConnection();
 
-    $result = $db->prepare('SELECT * FROM ciudades WHERE poblacion > :numero');
+    $result = $db->prepare('SELECT * FROM listado WHERE poblacion > :numero');
     $result->bindParam(":numero", $numero);
     $result->execute();
     $ciudades = array();
+    echo "Ciudades con $numero habitantes o más";
     while ($ciudad = $result->fetch(PDO::FETCH_ASSOC)) {
         $ciudades[] = $ciudad;
     }
