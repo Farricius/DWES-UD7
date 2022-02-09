@@ -1,7 +1,3 @@
-
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -18,10 +14,10 @@
         print "<input type='text' name='poblacion' >";
         print "<input type='submit' name='enviar' value='Mostrar Ciudades X habs.'>";
         print "<p class='error'>$error</p>";
-        //print "<p style='font-size: 12pt;font-weight: bold;color: #0066CC;'>$resultado</p>";
+        print "<p style='font-size: 12pt;font-weight: bold;color: #0066CC;'>$resultado</p>";
         ?>
     </form>
-    <div id="footer">Creado con <span class="red">♥</span> por: <a href="https://www.raulprietofernandez.net/">Raúl Prieto Fernández</a></div>
+    <!-- <div id="footer">Creado con <span class="red">♥</span> por: <a href="https://www.raulprietofernandez.net/">Raúl Prieto Fernández</a></div> -->
 </body>
 
 </html>

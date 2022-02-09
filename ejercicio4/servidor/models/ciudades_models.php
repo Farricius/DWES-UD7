@@ -1,23 +1,29 @@
 <?php
-function mostrarCiudades($numero)
-{ {
-        try {
-            $conexion = new PDO("mysql:host=" . $GLOBALS["servidor"] . ";dbname=" . $GLOBALS["baseDatos"], $GLOBALS["usuario"], $GLOBALS["pass"]);
-            echo "echo de la db zxdxddxdxd";
-            $sql = "SELECT nombre FROM listado WHERE poblacion > ?";
-            $sql = $conexion->prepare($sql);
-            $sql->bindParam(1, $numero);
-            $sql->execute();
 
-            while ($fila = $sql->fetch(PDO::FETCH_ASSOC)) {
-                $filas[] = $fila;
-            }
-            return $filas;
-        } catch (PDOException $e) {
-            echo "Conexión fallida dep: " . $e->getMessage();
-            return false;
-        }
-        $conexion = null;
+function getConnection()
+{
+
+    $user = 'developer';
+    $password = 'developer';
+    return  new PDO('mysql:host=localhost;dbname=ciudades', $user, $password);
+}
+
+
+function getCiudad($numero)
+{
+
+    $db = getConnection();
+
+    $result = $db->prepare('SELECT * FROM ciudades WHERE poblacion > :numero');
+    $result->bindParam(":numero", $numero);
+    $result->execute();
+    $ciudades = array();
+    while ($ciudad = $result->fetch(PDO::FETCH_ASSOC)) {
+        $ciudades[] = $ciudad;
     }
+
+
+    $db = null;
+    return $ciudades;
 }
 ?>
