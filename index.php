@@ -16,7 +16,7 @@ if (isset($_POST['enviar'])) {
     // Establecemos los parámetros de envío
     if (!empty($_POST['numero'])) {
         // Si los parámetros son correctos, llamamos a la función letra de calcularLetra.php
-        $resultado = "Este número sería " . $cliente->parImpar($numero);
+        $resultado = "Este número sería " . $cliente->letra($numero);
     } else {
         $error = "<strong>Error:</strong> Debes introducir un NUMEROOO correcto<br/><br/>Ej: 45678987";
     }
